@@ -1,0 +1,77 @@
+apiVersion: gateway.networking.k8s.io/v1
+date: "2026-10-15T10:31:45Z"
+gatewayAPIChannel: experimental
+gatewayAPIVersion: v1.5.0
+implementation:
+  contact:
+  - https://github.com/haproxytech/haproxy-unified-gateway/issues
+  organization: HAProxy Technologies
+  project: haproxy-unified-gateway
+  url: https://github.com/haproxytech/haproxy-unified-gateway
+  version: v1.0.7
+kind: ConformanceReport
+mode: default
+profiles:
+- core:
+    result: partial
+    skippedTests:
+    - HTTPRouteHeaderMatching
+    - HTTPRouteInvalidBackendRefUnknownKind
+    - HTTPRouteInvalidCrossNamespaceBackendRef
+    - HTTPRouteInvalidNonExistentBackendRef
+    - HTTPRouteInvalidReferenceGrant
+    - HTTPRouteMatching
+    - HTTPRouteMatchingAcrossRoutes
+    - HTTPRoutePartiallyInvalidViaInvalidReferenceGrant
+    - HTTPRouteRedirectHostAndStatus
+    - HTTPRouteReferenceGrant
+    - HTTPRouteServiceTypes
+    statistics:
+      Failed: 0
+      Passed: 22
+      Skipped: 11
+  extended:
+    result: success
+    statistics:
+      Failed: 0
+      Passed: 2
+      Skipped: 0
+    supportedFeatures:
+    - GatewayAddressEmpty
+    - GatewayHTTPListenerIsolation
+    - GatewayPort8080
+    unsupportedFeatures:
+    - BackendTLSPolicy
+    - BackendTLSPolicySANValidation
+    - GatewayBackendClientCertificate
+    - GatewayFrontendClientCertificateValidation
+    - GatewayFrontendClientCertificateValidationInsecureFallback
+    - GatewayHTTPSListenerDetectMisdirectedRequests
+    - GatewayInfrastructurePropagation
+    - GatewayStaticAddresses
+    - HTTPRoute303RedirectStatusCode
+    - HTTPRoute307RedirectStatusCode
+    - HTTPRoute308RedirectStatusCode
+    - HTTPRouteBackendProtocolH2C
+    - HTTPRouteBackendProtocolWebSocket
+    - HTTPRouteBackendRequestHeaderModification
+    - HTTPRouteBackendTimeout
+    - HTTPRouteCORS
+    - HTTPRouteDestinationPortMatching
+    - HTTPRouteHostRewrite
+    - HTTPRouteMethodMatching
+    - HTTPRouteNamedRouteRule
+    - HTTPRouteParentRefPort
+    - HTTPRoutePathRedirect
+    - HTTPRoutePathRewrite
+    - HTTPRoutePortRedirect
+    - HTTPRouteQueryParamMatching
+    - HTTPRouteRequestMirror
+    - HTTPRouteRequestMultipleMirrors
+    - HTTPRouteRequestPercentageMirror
+    - HTTPRouteRequestTimeout
+    - HTTPRouteResponseHeaderModification
+    - HTTPRouteSchemeRedirect
+    - ListenerSet
+  name: GATEWAY-HTTP
+  summary: Core tests partially succeeded with 11 test skips. Extended tests succeeded.
